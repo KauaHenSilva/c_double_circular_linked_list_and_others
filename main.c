@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <listEncCircu/listEncCircu.h>
+#include "listEncCircu/listEncCircu.c"
 
 int main()
 {
