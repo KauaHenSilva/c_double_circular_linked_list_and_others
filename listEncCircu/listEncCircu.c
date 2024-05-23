@@ -1,7 +1,10 @@
-#include "listaEncadeada.h"
+#include "listEncCircu.h"
 #include <stdio.h>
 
-void helloWord()
-{ 
-  printf("Olá Mundo\n");
+Elemento *addInicio(Elemento *l){
+    Elemento *novo = (Elemento*) malloc(sizeof(Elemento));
+    scanf("%d", &novo->info);
+    novo->prox = l;
+    return novo;
+
 }
