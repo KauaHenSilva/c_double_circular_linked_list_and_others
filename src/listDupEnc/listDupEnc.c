@@ -1,6 +1,7 @@
 #include "listDupEnc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "listDupEnc.h"
 
 ElementoDupEnc *headListDupEnc = NULL;
 

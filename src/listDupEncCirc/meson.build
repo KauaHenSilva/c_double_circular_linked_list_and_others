@@ -1,5 +1,5 @@
-list_dup= static_library(
-  'listDupEnc',
-  'listDupEnc.c',
+list_dup_enc_cir = static_library(
+  'listDupEncCir',
+  'listDupEncCirc.c',
   install: true,
 )
