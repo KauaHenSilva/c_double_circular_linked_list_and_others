@@ -10,6 +10,7 @@ Elemento *criaLista()
 Elemento *addInicio(Elemento *l)
 {
   Elemento *novo = (Elemento *)malloc(sizeof(Elemento));
+  printf("Digite um valor para adicionar no inicio: ");
   scanf("%d", &novo->info);
   if (l == NULL)
   {
@@ -35,6 +36,7 @@ Elemento *addInicio(Elemento *l)
 Elemento *addFinal(Elemento *l)
 {
   Elemento *newElemet = (Elemento *)malloc(sizeof(Elemento));
+  printf("Digite um valor para adicionar no final: ");
   scanf("%d", &newElemet->info);
 
   if (!l)
@@ -56,6 +58,7 @@ Elemento *addFinal(Elemento *l)
 Elemento *addOrdeandoCrescente(Elemento *l)
 {
   Elemento *novo = (Elemento *)malloc(sizeof(Elemento));
+  printf("Digite um valor para adicionar de forma crescente: ");
   scanf("%d", &novo->info);
 
   if (l == NULL)
@@ -89,6 +92,7 @@ Elemento *addOrdeandoCrescente(Elemento *l)
 Elemento *removerElemento(Elemento *l)
 {
   int info;
+  printf("Digite um valor para remover: ");
   scanf("%d", &info);
 
   if (l == NULL)
@@ -147,4 +151,18 @@ void mostrarLista(Elemento *l)
     aux = aux->prox;
   } while (aux != l);
   printf("primeiro(%d) -> resto(...)\n", l->info);
+}
+
+void exibicaomenu()
+{
+  printf("\n\nLISTA CIRCULAR\n\n");
+  printf("\n*******MENU*******\n");
+  printf("1. Adicionar Elemento no Inicio da Lista\n");
+  printf("2. Adicionar Elemento no Final da Lista\n");
+  printf("3. Ordenar a Lista de Forma Crescente\n");
+  printf("4. Remover Algum Elemento da Lista\n");
+  printf("5. Mostrar Tamanho da Lista\n");
+  printf("6. Exibicao da Lista\n");
+  printf("0. Sair do Programa\n");
+  printf("Selecione uma opcao:");
 }
