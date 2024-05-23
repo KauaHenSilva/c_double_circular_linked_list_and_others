@@ -12,7 +12,7 @@ extern ElementoDupEncCirc *headListDupEncCirc;
 
 ElementoDupEncCirc *criaListaDupEncCirc();                                 // feito
 ElementoDupEncCirc *addInicioDupEncCirc(ElementoDupEncCirc *l);            // feito
-// ElementoDupEncCirc *addFinalDupEncCirc(ElementoDupEncCirc *l);             // feito;
+ElementoDupEncCirc *addFinalDupEncCirc(ElementoDupEncCirc *l);             // feito;
 // ElementoDupEncCirc *addOrdeandoCrescenteDupEncCirc(ElementoDupEncCirc *l); // feito
 // ElementoDupEncCirc *removerElementoDupEncCirc(ElementoDupEncCirc *l);  // feito
 void freeListDupEnc(ElementoDupEncCirc *head);
