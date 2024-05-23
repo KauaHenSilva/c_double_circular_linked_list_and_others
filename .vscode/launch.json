@@ -1,30 +1,49 @@
 {
   "version": "0.2.0",
   "configurations": [
-      {
-          "name": "Executar meu_aplicativo",
-          "type": "cppdbg",
-          "request": "launch",
-          "program": "${workspaceFolder}/builddir/main",
-          "args": [],
-          "stopAtEntry": false,
-          "cwd": "${workspaceFolder}",
-          "environment": [],
-          "externalConsole": false,
-          "MIMode": "gdb",
-          "setupCommands": [
-              {
-                  "description": "Ativar impressora automática de variáveis",
-                  "text": "-enable-pretty-printing",
-                  "ignoreFailures": true
-              }
-          ],
-          "preLaunchTask": "Build com Meson",
-          "miDebuggerPath": "/usr/bin/gdb",
-          "logging": {
-              "moduleLoad": false,
-              "trace": false
-          }
+    {
+      "name": "Executar meu_aplicativo",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/builddir/main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Ativar impressora automática de variáveis",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "Build com Meson",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "logging": {
+        "moduleLoad": false,
+        "trace": false
       }
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/walis/OneDrive/Área de Trabalho/liguagem/C.III/listaencadeada/c_ed_list",
+      "program": "c:/Users/walis/OneDrive/Área de Trabalho/liguagem/C.III/listaencadeada/c_ed_list/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
   ]
 }
