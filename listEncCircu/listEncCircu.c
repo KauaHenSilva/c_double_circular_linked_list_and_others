@@ -1,7 +1,150 @@
-#include "listaEncadeada.h"
+#include "listEncCircu.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-void helloWord()
-{ 
-  printf("Olá Mundo\n");
+Elemento *criaLista()
+{
+  return NULL;
+}
+
+Elemento *addInicio(Elemento *l)
+{
+  Elemento *novo = (Elemento *)malloc(sizeof(Elemento));
+  scanf("%d", &novo->info);
+  if (l == NULL)
+  {
+    novo->prox = novo;
+    l = novo;
+  }
+  else
+  {
+
+    Elemento *aux = l;
+    while (aux->prox != l)
+    {
+      aux = aux->prox;
+    }
+
+    novo->prox = l;
+    aux->prox = novo;
+    l = novo;
+  }
+  return l;
+}
+
+Elemento *addFinal(Elemento *l)
+{
+  Elemento *newElemet = (Elemento *)malloc(sizeof(Elemento));
+  scanf("%d", &newElemet->info);
+
+  if (!l)
+  {
+    l = newElemet;
+    newElemet->prox = newElemet;
+    return newElemet;
+  }
+
+  Elemento *aux = l;
+  while (aux->prox != l)
+    aux = aux->prox;
+
+  aux->prox = newElemet;
+  newElemet->prox = l;
+  return l;
+}
+
+Elemento *addOrdeandoCrescente(Elemento *l)
+{
+  Elemento *novo = (Elemento *)malloc(sizeof(Elemento));
+  scanf("%d", &novo->info);
+
+  if (l == NULL)
+  {
+    l = novo;
+    novo->prox = novo;
+    return novo;
+  }
+
+  if (novo->info <= l->info)
+  {
+    Elemento *aux = l;
+    while (aux->prox != l)
+    {
+      aux = aux->prox;
+    }
+    aux->prox = novo;
+    novo->prox = l;
+  }
+
+  Elemento *aux = l;
+  while (aux->prox != l && aux->prox->info < novo->info)
+  {
+    aux = aux->prox;
+  }
+  novo->prox = aux->prox;
+  aux->prox = novo;
+  return l;
+}
+
+Elemento *removerElemento(Elemento *l)
+{
+  int info;
+  scanf("%d", &info);
+
+  if (l == NULL)
+  {
+    return NULL;
+  }
+
+  if (l->prox == l)
+  {
+    free(l);
+    return NULL;
+  }
+
+  Elemento *aux = l;
+  while (aux->prox != l && aux->prox->info != info)
+    aux = aux->prox;
+
+  if (aux->prox->info == info)
+  {
+    Elemento *remove = aux->prox;
+    aux->prox = aux->prox->prox;
+    free(remove);
+  }
+  return l;
+}
+
+int tamanhoDaLista(Elemento *l)
+{
+  int tam = 0;
+
+  if (!l)
+    return tam;
+
+  Elemento *aux = l;
+  do
+  {
+    tam++;
+    aux = aux->prox;
+  } while (aux != l);
+
+  return tam;
+}
+
+void mostrarLista(Elemento *l)
+{
+  if (l == NULL)
+  {
+    printf("Lista vazia.\n");
+    return;
+  }
+
+  Elemento *aux = l;
+  do
+  {
+    printf("%d -> ", aux->info);
+    aux = aux->prox;
+  } while (aux != l);
+  printf("primeiro(%d) -> resto(...)\n", l->info);
 }
