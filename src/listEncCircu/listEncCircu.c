@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Elemento *criaLista()
+ElementoEncCirc *criaListaEncCir()
 {
   return NULL;
 }
 
-Elemento *addInicio(Elemento *l)
+ElementoEncCirc *addInicioEncCir(ElementoEncCirc *l)
 {
-  Elemento *novo = (Elemento *)malloc(sizeof(Elemento));
+  ElementoEncCirc *novo = (ElementoEncCirc *)malloc(sizeof(ElementoEncCirc));
   printf("Digite um valor para adicionar no inicio: ");
   scanf("%d", &novo->info);
   if (l == NULL)
@@ -20,7 +20,7 @@ Elemento *addInicio(Elemento *l)
   else
   {
 
-    Elemento *aux = l;
+    ElementoEncCirc *aux = l;
     while (aux->prox != l)
     {
       aux = aux->prox;
@@ -33,9 +33,9 @@ Elemento *addInicio(Elemento *l)
   return l;
 }
 
-Elemento *addFinal(Elemento *l)
+ElementoEncCirc *addFinalEncCir(ElementoEncCirc *l)
 {
-  Elemento *newElemet = (Elemento *)malloc(sizeof(Elemento));
+  ElementoEncCirc *newElemet = (ElementoEncCirc *)malloc(sizeof(ElementoEncCirc));
   printf("Digite um valor para adicionar no final: ");
   scanf("%d", &newElemet->info);
 
@@ -46,7 +46,7 @@ Elemento *addFinal(Elemento *l)
     return newElemet;
   }
 
-  Elemento *aux = l;
+  ElementoEncCirc *aux = l;
   while (aux->prox != l)
     aux = aux->prox;
 
@@ -55,9 +55,9 @@ Elemento *addFinal(Elemento *l)
   return l;
 }
 
-Elemento *addOrdeandoCrescente(Elemento *l)
+ElementoEncCirc *addOrdeandoCrescenteEncCir(ElementoEncCirc *l)
 {
-  Elemento *novo = (Elemento *)malloc(sizeof(Elemento));
+  ElementoEncCirc *novo = (ElementoEncCirc *)malloc(sizeof(ElementoEncCirc));
   printf("Digite um valor para adicionar de forma crescente: ");
   scanf("%d", &novo->info);
 
@@ -70,7 +70,7 @@ Elemento *addOrdeandoCrescente(Elemento *l)
 
   if (novo->info <= l->info)
   {
-    Elemento *aux = l;
+    ElementoEncCirc *aux = l;
     while (aux->prox != l)
     {
       aux = aux->prox;
@@ -79,7 +79,7 @@ Elemento *addOrdeandoCrescente(Elemento *l)
     novo->prox = l;
   }
 
-  Elemento *aux = l;
+  ElementoEncCirc *aux = l;
   while (aux->prox != l && aux->prox->info < novo->info)
   {
     aux = aux->prox;
@@ -89,7 +89,7 @@ Elemento *addOrdeandoCrescente(Elemento *l)
   return l;
 }
 
-Elemento *removerElemento(Elemento *l)
+ElementoEncCirc *removerElementoEncCir(ElementoEncCirc *l)
 {
   int info;
   printf("Digite um valor para remover: ");
@@ -106,27 +106,27 @@ Elemento *removerElemento(Elemento *l)
     return NULL;
   }
 
-  Elemento *aux = l;
+  ElementoEncCirc *aux = l;
   while (aux->prox != l && aux->prox->info != info)
     aux = aux->prox;
 
   if (aux->prox->info == info)
   {
-    Elemento *remove = aux->prox;
+    ElementoEncCirc *remove = aux->prox;
     aux->prox = aux->prox->prox;
     free(remove);
   }
   return l;
 }
 
-int tamanhoDaLista(Elemento *l)
+int tamanhoDaListaEncCir(ElementoEncCirc *l)
 {
   int tam = 0;
 
   if (!l)
     return tam;
 
-  Elemento *aux = l;
+  ElementoEncCirc *aux = l;
   do
   {
     tam++;
@@ -136,24 +136,36 @@ int tamanhoDaLista(Elemento *l)
   return tam;
 }
 
-void mostrarLista(Elemento *l)
+void mostrarListaEncCir(ElementoEncCirc *head)
 {
-  if (l == NULL)
+  if (head == NULL)
   {
     printf("Lista vazia.\n");
     return;
   }
 
-  Elemento *aux = l;
+  ElementoEncCirc *aux = head;
   do
   {
     printf("%d -> ", aux->info);
     aux = aux->prox;
-  } while (aux != l);
-  printf("primeiro(%d) -> resto(...)\n", l->info);
+  } while (aux != head);
+  printf("primeiro(%d) -> resto(...)\n", head->info);
 }
 
-void exibicaomenu()
+void freeListEncCir(ElementoEncCirc *head)
+{
+  ElementoEncCirc *eliminar;
+  ElementoEncCirc *aux = head;
+  do
+  {
+    eliminar = aux;
+    aux = aux->prox;
+    free(eliminar);
+  } while (aux != head);
+}
+
+void exibicaomenuEncCir()
 {
   printf("\n\nLISTA CIRCULAR\n\n");
   printf("\n*******MENU*******\n");

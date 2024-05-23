@@ -5,11 +5,12 @@ project(
   default_options: ['warning_level=3'],
 )
 
-subdir('listEncCircu')
+subdir('src/listEncCircu')
+subdir('src/listDupEnc')
 
 executable(
   'main',
-  'main.c',
+  'src/main.c',
   install: true,
-  link_with: list_enc_circu
+  link_with: [list_enc_circu, list_dup_enc]
 )
