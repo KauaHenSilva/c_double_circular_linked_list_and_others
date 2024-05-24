@@ -5,9 +5,9 @@
 int main()
 {
   headListDupEncCirc = criaListaDupEncCirc();
-  headListDupEncCirc = addFinalDupEncCirc(headListDupEncCirc);
-  headListDupEncCirc = addFinalDupEncCirc(headListDupEncCirc);
-  headListDupEncCirc = addFinalDupEncCirc(headListDupEncCirc);
+  headListDupEncCirc = addOrdeandoCrescenteDupEncCirc(headListDupEncCirc);
+  headListDupEncCirc = addOrdeandoCrescenteDupEncCirc(headListDupEncCirc);
+  headListDupEncCirc = addOrdeandoCrescenteDupEncCirc(headListDupEncCirc);
 
   return 0;
 }
