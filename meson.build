@@ -10,8 +10,8 @@ subdir('src/listEncCircu')
 subdir('src/listDupEnc')
 
 executable(
-  'main',
-  'src/main.c',
+  'exemple',
+  'src/exemple.c',
   install: true,
   link_with: [list_enc_circu, list_dup_enc, list_dup_enc_cir],
 )
